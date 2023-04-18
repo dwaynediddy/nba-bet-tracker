@@ -11,11 +11,11 @@ const Team = () => {
   return (
     <div>
         <label htmlFor="nbaTeams">Select a Team: </label>
-        <select id="nbaTeams" value={nbaTeams} onChange={handleOptions}>
+        <select id="nbaTeams" value={team} onChange={handleOptions}>
             {nbaTeams.map((nbaTeam) => (
-              <nbaTeam key={nbaTeam} value={nbaTeam}>
-                {team}
-              </nbaTeam> 
+              <option key={nbaTeam} value={nbaTeam}>
+                {nbaTeam}
+              </option> 
             ))}
         </select>
         <p>{team}</p>
