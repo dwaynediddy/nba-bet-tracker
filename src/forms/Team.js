@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 
 const Team = () => {
     const [team, setTeam] = useState('');
-    const nbaTeams = ["Lakers", "Bulls", "Nets", "Magic"]
+    const nbaTeams = [" ", "Lakers", "Bulls", "Nets", "Magic"]
+
+    const [toggleValue, setToggleValue] = useState(false)
+    const [displayString, setDisplayString] = useState('');
+
+    const handleClick = () => {
+      setToggleValue(!toggleValue);
+    };
 
     const handleOptions = (e) => {
         setTeam(e.target.value)
@@ -19,6 +26,12 @@ const Team = () => {
             ))}
         </select>
         <p>{team}</p>
+      <div>
+        <label>
+          <p>Overs?</p>
+          <input type="checkbox" checked={toggleValue} onChange={handleClick} />
+        </label>
+      </div>
     </div>
   )
 }

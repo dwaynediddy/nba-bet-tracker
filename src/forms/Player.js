@@ -2,29 +2,33 @@ import React, { useState } from 'react'
 
 const Player = () => {
     const [selectedPlayer, setSelectedPlayer] = useState([])
-    const player = ["some", "sort", "of" ,"player", "api"]
+    const player = ["", "some", "sort", "of" ,"player", "api"]
+    const [players, setPlayers] = useState([])
 
     const handleOptions = (e) => {
         setSelectedPlayer(e.target.value)
     }
 
+    const addPlayer = () => {
+        setPlayers([...players, {}])
+      }
+
   return (
-    <div>
         <div>
-            <label htmlFor="player" >Select a player: </label>
-                <select id="player" value={player} onChange='something'>
-                    {player.map((option) => (
-                        <option key={player} value={option}>
-                            {option}
-                        </option>
-                    ))}    
-                </select> 
+            <div>
+                <label htmlFor="player">Select a player: </label>
+                <select id="player" value={selectedPlayer} onChange={handleOptions}>
+                {player.map((option) => (
+                    <option key={option} value={option}>
+                        {option}
+                    </option>
+                ))}
+                </select>
                 <p>{selectedPlayer}</p>
+            </div>
         </div>
-        <h3>{selectedPlayer}</h3>
-    </div>
-  )
-}
+        )
+    }
 
 export default Player
 
