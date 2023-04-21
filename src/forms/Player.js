@@ -1,8 +1,18 @@
 import React, { useState } from 'react'
 
 const Player = () => {
-    const [selectedPlayer, setSelectedPlayer] = useState([])
-    const player = ["", "some", "sort", "of" ,"player", "api"]
+    const [selectedPlayer, setSelectedPlayer] = useState('')
+    const player = [
+        {
+            name: "Lebron James"
+        },
+        {
+            name: "Chris Paul"
+        },
+        {
+            name: "Anthony Davis"
+        }
+    ]
     const [players, setPlayers] = useState([])
 
     const handleOptions = (e) => {
@@ -18,9 +28,9 @@ const Player = () => {
             <div>
                 <label htmlFor="player">Select a player: </label>
                 <select id="player" value={selectedPlayer} onChange={handleOptions}>
-                {player.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
+                {player.map((option, i) => (
+                    <option key={i} value={option}>
+                        {option.name}
                     </option>
                 ))}
                 </select>

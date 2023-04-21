@@ -1,12 +1,14 @@
 import React from 'react'
 import CompletedLeg from './forms/CompletedLeg'
+import SliderApp from './Slider/SliderApp'
 
 const Main = () => {
 
   return (
     <div>
       <div>
-        <CompletedLeg />
+        {/* <CompletedLeg /> */}
+        <SliderApp />
       </div>
     </div>
   )
