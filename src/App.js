@@ -1,12 +1,12 @@
-import './App.css';
-import Main from './Main';
+import React from 'react'
+import NbaApi from './api/NbaApi'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Main />
+    <div>
+      <NbaApi />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
